@@ -1,9 +1,9 @@
 pipeline{
     agent{
-  label 'buildserver'
+  label 'agentserver'
     }
      tools{
-        maven 'mymaven'
+        maven 'maven'
      }
       stages{
         stage("build"){
@@ -14,7 +14,7 @@ pipeline{
 
             }
         }
-        /*stage("unit testing"){
+        stage("unit testing"){
             steps{
                 
                 sh 'mvn test'
@@ -30,7 +30,7 @@ pipeline{
 
                 }
             }
-        }*/
+        }
         /*stage("sonar"){
             steps{
                 script{
@@ -54,11 +54,11 @@ pipeline{
         }
         stage("deployment"){
             agent{
-                label 'ansible_master'
+                label 'ansible'
             }
               steps{
                 script{
-                   sh 'ansible-playbook -i inventory.yaml deployment_playbook.yaml -e "build_number=${BUILD_NUMBER}\"'
+                   sh 'ansible-playbook -i inventory.yaml apache_variable.yaml.yaml -e "build_number=${BUILD_NUMBER}\"'
                 }
                   
               }
