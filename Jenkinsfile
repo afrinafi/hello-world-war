@@ -54,7 +54,7 @@ pipeline{
         }
         stage("deployment"){
             agent{
-                label 'ansible-server'
+                label 'ansible'
             }
               steps{
                 script{
