@@ -1,5 +1,5 @@
 - name: deployment
-  hosts: test
+  hosts: all
   become: True
   vars:
     nexus_url: http://13.57.208.82:8081/repository
