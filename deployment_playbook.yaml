@@ -2,7 +2,7 @@
   hosts: all
   become: True
   vars:
-    nexus_url: http://13.57.208.82:8081/repository
+    nexus_url: http://54.183.158.61:8081/repository
     repository_type: mymaven-releases
     group_id: com/efsavage
     artifact_id: hello-world-war
