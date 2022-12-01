@@ -11,7 +11,7 @@
   tasks:
   - name: Download file from a file path
     ansible.builtin.get_url:
-      url: "{{nexus_url}}/{{repository_type}}/{{group_id}}/{{artifact_id}}/{{version}}-{{build_number}}/{{artifact_id}}-{{version}}-{{ build_number}}.war"
+      url: "{{nexus_url}}/{{repository_type}}/{{group_id}}/{{artifact_id}}/{{version}}-{{build_number}}/{{artifact_id}}-{{version}}-{{build_number}}.war"
       dest: /tmp
       username: admin
       password: admin@
