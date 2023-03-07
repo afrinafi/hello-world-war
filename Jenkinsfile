@@ -1,9 +1,9 @@
 pipeline{
     agent{
-  label 'buildserver'
+  label 'agentserver'
     }
      tools{
-        maven 'mymaven'
+        maven 'maven'
      }
       stages{
         stage("build"){
@@ -54,7 +54,7 @@ pipeline{
         }
         stage("deployment"){
             agent{
-                label 'ansible_master'
+                label 'ansible'
             }
               steps{
                 script{

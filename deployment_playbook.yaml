@@ -2,7 +2,7 @@
   hosts: all
   become: True
   vars:
-    nexus_url: http://18.221.139.2:8081/repository
+    nexus_url: http://54.183.158.61:8081/repository
     repository_type: mymaven-releases
     group_id: com/efsavage
     artifact_id: hello-world-war
@@ -11,10 +11,10 @@
   tasks:
   - name: Download file from a file path
     ansible.builtin.get_url:
-      url: "{{nexus_url}}/{{repository_type}}/{{group_id}}/{{artifact_id}}/{{version}}-{{build_number}}/{{artifact_id}}-{{version}}-{{ build_number}}.war"
+      url: "{{nexus_url}}/{{repository_type}}/{{group_id}}/{{artifact_id}}/{{version}}-{{build_number}}/{{artifact_id}}-{{version}}-{{build_number}}.war"
       dest: /tmp
       username: admin
-      password: afrin
+      password: admin@
   - name: rename war file
     shell: "mv /tmp/hello-world-war* /usr/share/tomcat/webapps/helloworld.war"
 
